@@ -16,37 +16,36 @@ $(document).ready(function () {
 function userguess(userguessnum){
 $(document).ready(function(){
     $("#answer1").on("click", function() {
-        userguessnum = $("#answer1").val();
+        userguessnum = parseInt($("#answer1").val());
         console.log(userguessnum);
     })
-    $("#answer2").on("click", function() {
-        userguessnum = $("#answer2").val();
-        console.log(userguessnum);
-    })
-    $("#answer3").on("click", function() {
-        userguessnum = $("#answer3").val();
-        console.log(userguessnum);
-    })
-    $("#answer4").on("click", function() {
-        userguessnum = $("#answer4").val();
-        console.log(userguessnum);
-    })
-});
-console.log(userguessnum)
-return userguessnum
+    // $("#answer2").on("click", function() {
+    //     userguessnum = $("#answer2").val();
+       
+    // })
+    // $("#answer3").on("click", function() {
+    //     userguessnum = $("#answer3").val();
+      
+    // })
+    // $("#answer4").on("click", function() {
+    //     userguessnum = $("#answer4").val();
+        
+    // })
+}); 
 }
 
 //Coountdown Function
 function startCountdown(func) {
-    setTimeout(func, 5000) 
+    setTimeout(func, 20000) 
 }
 
 //Questions and Answers
 function questionOne(){
+    $("#result").hide();
     userguess();
     startCountdown(questionTwo);
     var questionOne = document.getElementById("question");
-    questionOne.innerHTML = "Roman Emperor Claudius legalized what at banquests?";
+    questionOne.innerHTML = "Roman Emperor Claudius legalized what at banquets?";
     var q1rightanswer = document.getElementById("answer1");
     q1rightanswer.innerHTML = "Passing gas";
     var q1wronganswer1 = document.getElementById("answer2");
@@ -57,7 +56,7 @@ function questionOne(){
     q1wronganswer3.innerHTML = "Assaulting the host if the food was bad";
     var q1fact = document.getElementById("factoid")
     q1fact.innerHTML = "He though it was unhealthy to hold it in";
-    if (userguessnum === "1") {
+    if (userguessnum === 1) {
         var correct = document.getElementById("result");
         correct.innerHTML = "That is correct!";
         correctAnswers++;
@@ -73,7 +72,7 @@ function questionTwo(){
     var questionTwo = document.getElementById("question");
     questionTwo.innerHTML = "The city of La Paz in Bolivia is safe from fire because of what?";
     var q2rightanswer = document.getElementById("answer1");
-    q2rightanswer.innerHTML = "Because of its high altitude there is not enough oxigen to burn";
+    q2rightanswer.innerHTML = "Because of its high altitude there is not enough oxygen to burn";
     var q2wronganswer1 = document.getElementById("answer2");
     q2wronganswer1.innerHTML = "It rains on average 320 out of 365 days a year";
     var q2wronganswer2 = document.getElementById("answer3");
